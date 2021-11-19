@@ -14,11 +14,13 @@ general, initial, medial, final, isolated.
 
 For example: the letter ba':
 
-| general  | \u0628 | ب |
-| isolated | \uFE8F | ﺏ |
-| final    | \uFE90 | ﺐ |
-| medial   | \uFE92 | ﺒ |
-| initial  | \uFE91 | ﺑ |
+| position | code point | shape |
+|----------|------------|-------|
+| general  | \u0628     | ب     |
+| isolated | \uFE8F     | ﺏ     |
+| final    | \uFE90     | ﺐ     |
+| medial   | \uFE92     | ﺒ     |
+| initial  | \uFE91     | ﺑ     |
 
 Normally, only the general form is used in a text,
 and most programs will handle the shaping of the letter
