@@ -194,5 +194,23 @@ class Test_dictionaries(unittest.TestCase):
                     print("character count changed:", c, chars[c], "no name")
             self.assertEqual(chars[c][0], chars[c][1])
 
+class Test_normalization(unittest.TestCase):
+    def test_AE(self):
+        inp = "بعدە" # \u06d5 ARABIC LETTER AE
+        comp = "بعده" # \u0647 ARABIC LETTER HEH
+        self.assertEqual(contextualize(inp), contextualize(comp))
+
+    def test_heh_goal(self):
+        inp = "بعدہ" # \u06c1 ARABIC LETTER HEH GOAL
+        comp = "بعده" # ARABIC LETTER HEH
+        self.assertEqual(contextualize(inp), contextualize(comp))
+
+    def test_NG(self):
+        inp = "ݣ" # ARABIC LETTER KEHEH WITH THREE DOTS ABOVE
+        comp = "ڭ" # \u06AD ARABIC LETTER NG
+        self.assertEqual(contextualize(inp), contextualize(comp))
+  
+
+
 if __name__ == "__main__":
     unittest.main()
