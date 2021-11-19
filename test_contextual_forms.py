@@ -173,10 +173,10 @@ class Test_dictionaries(unittest.TestCase):
     def test_file_change(self):
         """check if the number of times each character is in a text file
         changes after contextualizing and decontextualizing it."""
-        infp = "test/0851IbnQadiShuhba.TabaqatShaficiyya.JK000195-ara1.inProgress"
-        outfp = "test/contextualized.txt"
+        infp = "test/0851IbnQadiShuhba.TabaqatShaficiyya.JK000195-ara1"
+        outfp = infp + ".contextualized"
         contextualize(infp, outfp)
-        outfp2 = "test/decontextualized.txt"
+        outfp2 = infp + ".decontextualized"
         decontextualize(outfp, outfp2)
         chars = dict()
         for i, fp in enumerate([infp, outfp2]):
